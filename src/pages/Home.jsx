@@ -9,6 +9,7 @@ import { ChakraProvider, Box, Container, Flex, useColorModeValue } from '@chakra
 import { WalletConnection } from '../components/sections/WalletConnection'
 import { RecipientManager } from '../components/sections/RecipientManager';
 import { ChatInterface } from '../components/sections/ChatInterface';
+import { AirdropButton } from '../components/sections/AirdropButton';
 
 // Polyfill Buffer for browser
 import { Buffer } from 'buffer';
@@ -36,14 +37,32 @@ export default function Home() {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
-            <Box minH="100vh" bg={bgColor} py={8}>
+            <Box 
+              minH="100vh" 
+              bg={bgColor} 
+              py={8}
+              position="relative"
+            >
+              {/* Airdrop Button - Top Left */}
+              <Box 
+                position="absolute" 
+                top={4} 
+                left={4}
+              >
+                <AirdropButton />
+              </Box>
+
+              {/* Wallet Connection - Top Right */}
+              <Box 
+                position="absolute" 
+                top={4} 
+                right={4}
+              >
+                <WalletConnection />
+              </Box>
+
               <Container maxW="container.xl">
                 <Flex direction="column" gap={6}>
-                  {/* Wallet Connection - Top Right */}
-                  <Box position="absolute" top={4} right={4}>
-                    <WalletConnection />
-                  </Box>
-
                   {/* Command Center */}
                   <Box
                     mt={16}
