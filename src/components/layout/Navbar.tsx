@@ -15,7 +15,7 @@ export const Navbar: React.FC = () => {
       </div>
 
       <CustomButton className="px-[27px] py-[13px] text-[17px] leading-[19px] font-[500] font-['Lexend']" onClick={() => navigate("/home")}>
-        App -> 
+        App -{">"}
       </CustomButton>
       <button className="hidden max-md:block" >
         <svg
