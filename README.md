@@ -1,54 +1,132 @@
-# Welcome to SolAssist-AI
+# SolAssistAI - Your Solana Payment Assistant
 
-## Project info
+![Solana](https://img.shields.io/badge/Solana-black?style=for-the-badge&logo=solana)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Chakra UI](https://img.shields.io/badge/Chakra_UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white)
 
+SolAssistAI is an intelligent payment assistant built on the Solana blockchain that simplifies cryptocurrency transactions through natural language interactions. It helps users manage payments, track transactions, and maintain recipient lists with an intuitive chat interface.
 
-## How can I edit this code?
+## 🌟 Features
 
+### 💬 Natural Language Interaction
+- Send payments using simple chat commands
+- Get transaction status and balance information
+- Manage recipients through conversation
 
-**Use your preferred IDE**
+### 👥 Recipient Management
+- Save and organize frequent payment recipients
+- Quick access to saved wallet addresses
+- Nickname support for easier identification
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 📊 Transaction Tracking
+- Real-time transaction status updates
+- Detailed transaction history
+- Direct links to Solscan for transaction details
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🔐 Secure Wallet Integration
+- Seamless connection with Phantom Wallet
+- Secure transaction signing
+- Real-time balance updates
 
-Follow these steps:
+## 🚀 Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
+- Node.js (v16 or higher)
+- Phantom Wallet browser extension
+- Solana devnet tokens for testing
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/solassist-ai.git
+cd solassist-ai
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file:
+```env
+VITE_API_BASE_URL=your_api_url
+```
+
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 💡 Use Cases
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Personal Use
+- Send SOL to friends and family using natural language
+- Keep track of payment history
+- Manage frequent recipients
 
-**Use GitHub Codespaces**
+### Business Use
+- Process customer payments
+- Maintain vendor payment records
+- Track business transactions
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Developer Use
+- Integration with existing applications
+- Custom payment flow implementation
+- Transaction history analysis
 
-## What technologies are used for this project?
+## 🔧 Technical Stack
 
-This project is built with .
+### Frontend
+- React with Vite
+- Chakra UI for styling
+- Solana Web3.js
+- Wallet Adapter for Solana
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Backend
+- Node.js
+- Express
+- Solana Web3.js
+- Natural Language Processing
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🔗 Links
+
+- [Live Demo](https://solassist-ai.com)
+- [API Documentation](https://docs.solassist-ai.com)
+- [Solana Documentation](https://docs.solana.com)
+
+## 📞 Support
+
+For support, please:
+- Open an issue in this repository
+- Join our [Discord community](https://discord.gg/solassist)
+- Email us at support@solassist-ai.com
+
+## ⚠️ Disclaimer
+
+This project is in active development. While we strive for reliability, please use caution when handling real transactions. Always verify transaction details before confirming.
+
+## 🙏 Acknowledgments
+
+- Solana Foundation for blockchain infrastructure
+- Phantom Wallet team for wallet integration
+- Open source community for various tools and libraries
+
+---
+
+Built with ❤️ by the SolAssistAI Team
 

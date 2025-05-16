@@ -2,8 +2,7 @@
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
-import Features from "@/components/sections/Features";
-import Footer from "@/components/sections/Footer";
+
 import SearchBar from "@/components/ui/SearchBar";
 
 // Placeholder image URL - replace with actual image in production
@@ -23,9 +22,8 @@ const Index: React.FC = () => {
             <div className="flex flex-col items-center">
               <Navbar />
               <Hero heroImageUrl={heroImageUrl} />
-              <SearchBar />
-              <Features />
-              <Footer />
+
+
             </div>
           </div>
         </div>

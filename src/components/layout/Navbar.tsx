@@ -13,19 +13,9 @@ export const Navbar: React.FC = () => {
           className="h-8"
         />
       </div>
-      <div className="flex items-center gap-10 max-md:hidden">
-        <Link to="#" className="text-[18px] text-[#080808] font-light font-['DM_Sans'] leading-[40px]">
-          Meet Nova
-        </Link>
-        <Link to="#" className="text-[18px] text-[#110B53] font-semibold font-['DM_Sans'] leading-[40px]">
-          Why AI?
-        </Link>
-        <Link to="#" className="text-[18px] text-[#080808] font-light font-['DM_Sans'] leading-[40px]">
-          FAQ
-        </Link>
-      </div>
+
       <CustomButton className="px-[27px] py-[13px] text-[17px] leading-[19px] font-[500] font-['Lexend']" onClick={() => navigate("/home")}>
-        Download Now
+        App -> 
       </CustomButton>
       <button className="hidden max-md:block" >
         <svg
