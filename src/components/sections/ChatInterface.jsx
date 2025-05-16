@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { Box, Input, Button, VStack, Text, useToast } from '@chakra-ui/react';
 import { Transaction } from '@solana/web3.js';
-import { processTransactionIntent, sendTransaction } from '../lib/api';
-import { createOrGetUser } from '../lib/api';
+import { processTransactionIntent, sendTransaction } from '../../lib/api';
+import { createOrGetUser } from '../../lib/api';
 
 export function ChatInterface() {
   const { publicKey, signTransaction } = useWallet();

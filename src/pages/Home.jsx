@@ -4,11 +4,11 @@ import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
 import { clusterApiUrl } from '@solana/web3.js';
-import { ChakraProvider, Container, VStack, Heading, Tab, Tabs, TabList, TabPanel, TabPanels } from '@chakra-ui/react';
+import { ChakraProvider, Box, Container, Flex, useColorModeValue } from '@chakra-ui/react';
 
-import { WalletConnection } from '@/components/WalletConnection';
-import { RecipientManager } from '@/components/RecipientManager';
-import { ChatInterface } from '@/components/ChatInterface';
+import { WalletConnection } from '../components/sections/WalletConnection'
+import { RecipientManager } from '../components/sections/RecipientManager';
+import { ChatInterface } from '../components/sections/ChatInterface';
 
 // Polyfill Buffer for browser
 import { Buffer } from 'buffer';
@@ -27,35 +27,58 @@ export default function Home() {
     [] 
   );
 
+  const bgColor = useColorModeValue('rgba(255, 253, 247, 1)', 'gray.900');
+  const commandCenterBg = useColorModeValue('white', 'gray.800');
+  const borderColor = useColorModeValue('gray.200', 'gray.700');
+
   return (
     <ChakraProvider>
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
-            <Container maxW="container.lg" py={8}>
-              <VStack spacing={8} align="stretch">
-                <WalletConnection />
-                
-                <Heading size="lg" textAlign="center">
-                  Solana Payment Agent
-                </Heading>
+            <Box minH="100vh" bg={bgColor} py={8}>
+              <Container maxW="container.xl">
+                <Flex direction="column" gap={6}>
+                  {/* Wallet Connection - Top Right */}
+                  <Box position="absolute" top={4} right={4}>
+                    <WalletConnection />
+                  </Box>
 
-                <Tabs isFitted variant="enclosed">
-                  <TabList mb="1em">
-                    <Tab>Send Payment</Tab>
-                    <Tab>Manage Recipients</Tab>
-                  </TabList>
-                  <TabPanels>
-                    <TabPanel>
-                      <ChatInterface />
-                    </TabPanel>
-                    <TabPanel>
-                      <RecipientManager />
-                    </TabPanel>
-                  </TabPanels>
-                </Tabs>
-              </VStack>
-            </Container>
+                  {/* Command Center */}
+                  <Box
+                    mt={16}
+                    bg={commandCenterBg}
+                    borderRadius="xl"
+                    boxShadow="lg"
+                    p={6}
+                    border="1px solid"
+                    borderColor={borderColor}
+                  >
+                    <Flex direction="column" gap={6}>
+                      {/* Chat Interface */}
+                      <Box
+                        bg={useColorModeValue('gray.50', 'gray.700')}
+                        p={4}
+                        borderRadius="lg"
+                        minH="200px"
+                      >
+                        <ChatInterface />
+                      </Box>
+
+                      {/* Recipients Section */}
+                      <Box
+                        bg={useColorModeValue('gray.50', 'gray.700')}
+                        p={4}
+                        borderRadius="lg"
+                        minH="200px"
+                      >
+                        <RecipientManager />
+                      </Box>
+                    </Flex>
+                  </Box>
+                </Flex>
+              </Container>
+            </Box>
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

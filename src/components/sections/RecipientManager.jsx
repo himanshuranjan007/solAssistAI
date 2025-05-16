@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { Box, Button, Input, VStack, HStack, Text, useToast, Table, Thead, Tbody, Tr, Th, Td, IconButton } from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons';
-import { createOrGetUser, getRecipients, addRecipient as apiAddRecipient, deleteRecipient as apiDeleteRecipient } from '../lib/api';
-
+import { createOrGetUser, getRecipients, addRecipient as apiAddRecipient, deleteRecipient as apiDeleteRecipient } from '../../lib/api';
+import { Heading } from '@chakra-ui/react';
 export function RecipientManager() {
   const { publicKey } = useWallet();
   const [recipients, setRecipients] = useState([]);
@@ -170,6 +170,9 @@ export function RecipientManager() {
 
   return (
     <Box p={4}>
+     <Text fontSize="lg" fontWeight="semibold" mb={3}>
+        Manage Recipients
+      </Text>
       <VStack spacing={4} align="stretch">
         <form onSubmit={handleAddRecipient}>
           <HStack spacing={4}>
@@ -184,7 +187,7 @@ export function RecipientManager() {
               onChange={(e) => setNewAddress(e.target.value)}
             />
             <Button type="submit" colorScheme="blue">
-              Add Recipient
+              Add
             </Button>
           </HStack>
         </form>
